@@ -17,7 +17,7 @@ public class GenerateInput {
         int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++)
             /*java random returns a pseudorandom,
-            // uniformly distributed int value between 0 (inclusive) and the specified value (exclusive)*/
+            uniformly distributed int value between 0 (inclusive) and the specified value (exclusive)*/
             arr[i] = new Random().nextInt(max-1+1)+1; 
         return arr;
     }
