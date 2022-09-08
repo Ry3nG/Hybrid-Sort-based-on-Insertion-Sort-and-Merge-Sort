@@ -8,7 +8,7 @@ import java.util.*;
 
 public class GenerateInput {
     public static void main(String[] args) {
-        int[] testArr = generateRandom(10, 100);
+        int[] testArr = generateRandom(1000000, 100);
         System.out.println(Arrays.toString(testArr));
 
     }
