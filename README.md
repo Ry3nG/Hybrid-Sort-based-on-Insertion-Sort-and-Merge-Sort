@@ -9,7 +9,7 @@ the algorithm will switch to Insertion Sort, which is efficient for small-sized 
 Essential Components:
 
 - [ ] **Algorithm Implementation**: Implement the above hybrid algorithm.
-- [ ] **Generate Input Data**: Generate arrays of increasing sizes, in a range from
+- [x] **Generate Input Data**: Generate arrays of increasing sizes, in a range from
 1,000 to 10 million. For each of the sizes, generate a random dataset of integers
 in the range of [1, …, x], where x is the largest number you allow for your
 datasets.
