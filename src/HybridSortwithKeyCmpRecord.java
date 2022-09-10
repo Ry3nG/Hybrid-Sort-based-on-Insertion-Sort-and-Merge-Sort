@@ -1,23 +1,27 @@
+import java.io.IOException;
 import java.util.*;
 
 public class HybridSortwithKeyCmpRecord {
     static int S = 30;
     static int keyCmp;
 
-    public static void main(String[] args) {
-        double[] test1Result = keyCmpwithInputTest();
-        System.out.println("Test 1: " + Arrays.toString(test1Result));
+    public static void main(String[] args) throws IOException {
 
-        double[] test2Result = keyCmpwithSTest();
+        long[] test2Result = keyCmpwithSTest();
         System.out.println("Test 2: " + Arrays.toString(test2Result));
+        makeCSV.CSVprinter(test2Result, "test2.csv");
+
+        long[] test1Result = keyCmpwithInputTest();
+        System.out.println("Test 1: " + Arrays.toString(test1Result));
+        makeCSV.CSVprinter(test1Result, "test1.csv");
     }
 
-    public static double[] keyCmpwithInputTest() {
+    public static long[] keyCmpwithInputTest() {
         // S fixed, number of key comparisons over different sizes of input size:
         int count = 0;
-        double[] keyCmpArr = new double[1000];
-        for (int i = 1000; i < 10000000; i += 1000) {
-            double average = 0;
+        long[] keyCmpArr = new long[1000];
+        for (int i = 1000; i < 10000000; i += 10000) {
+            long average = 0;
             for (int j = 0; j < 5; j++) {
                 keyCmp = 0;
                 int[] testArr = GenerateInput.generateRandom(i, 1000);
@@ -30,13 +34,13 @@ public class HybridSortwithKeyCmpRecord {
         return keyCmpArr;
     }
 
-    public static double[] keyCmpwithSTest() {
+    public static long[] keyCmpwithSTest() {
         // input size fixed,test for different value of S
         int count = 0;
-        double[] keyCmpArr = new double[100];
+        long[] keyCmpArr = new long[100];
         for (int i = 0; i < 100; i += 1) {
             S = i;
-            double average = 0;
+            long average = 0;
             for (int j = 0; j < 5; j++) {
                 keyCmp = 0;
                 int[] testArr = GenerateInput.generateRandom(100000, 1000);
