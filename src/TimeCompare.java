@@ -101,9 +101,9 @@ public class TimeCompare {
         CSVprinter(mergeTimes, "merge.csv");
 
         count = 0;
-        long[] insertTimes = new long[MAX_SIZE/INCREMENT];
+        long[] insertTimes = new long[MAX_SIZE/100/INCREMENT];
 
-        for(int i = 1000; i <= MAX_SIZE; i += INCREMENT){
+        for(int i = 1000; i <= MAX_SIZE/100; i += INCREMENT){
             System.out.println("Iteration: " + count + ", Size: " + i);
             insertTime = insertion(i);
             insertTimes[count] = insertTime;
