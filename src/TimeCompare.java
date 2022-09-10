@@ -1,52 +1,51 @@
-import java.util.Arrays;
+
 
 public class TimeCompare {
 
     public static long mergeInplace(int[] testArrInplace){
         long begin, end;
-        begin = System.nanoTime();
+        begin = System.currentTimeMillis();
         MergeSortInPlace.sortIt(testArrInplace,0,testArrInplace.length-1);
         //end = System.currentTimeMillis();
-        end = System.nanoTime();
+        end = System.currentTimeMillis();
         return end-begin;
     }
 
     public static long mergeOriginal(int[] testArrOriginal){
         long begin, end;
-        begin = System.nanoTime();
+        begin = System.currentTimeMillis();
         MergeSortOriginal.sortIt(testArrOriginal,0,testArrOriginal.length-1);
         //end = System.currentTimeMillis();
-        end = System.nanoTime();
+        end = System.currentTimeMillis();
         return end-begin;
     }
 
     public static long insertion(int[] testArrInsert){
         long begin, end;
-        begin = System.nanoTime();
+        begin = System.currentTimeMillis();
         InsertionSort.sortIt(testArrInsert,0,testArrInsert.length-1);
         //end = System.currentTimeMillis();
-        end = System.nanoTime();
+        end = System.currentTimeMillis();
         return end-begin;
     }
 
     public static long hybrid(int[] testArrHybrid){
         long begin, end;
-        begin = System.nanoTime();
+        begin = System.currentTimeMillis();
         HybridSort.sortIt(testArrHybrid,0,testArrHybrid.length-1);
         //end = System.currentTimeMillis();
-        end = System.nanoTime();
+        end = System.currentTimeMillis();
         return end-begin;
     }
 
     public static void main(String[] args) {
+        int size = 10000, max = 100;
         // 3 copies of the same array
-        int[] testArr1 = GenerateInput.generateRandom(100000, 100);
-        
-        int[] testArr2 = GenerateInput.generateRandom(100000, 100);
-        int[] testArr3 = GenerateInput.generateRandom(100000, 100);
-        int[] testArr4 = GenerateInput.generateRandom(100000, 100);
+        int[] testArr1 = GenerateInput.generateRandom(size, max);
+        int[] testArr2 = GenerateInput.generateRandom(size, max);
+        int[] testArr3 = GenerateInput.generateRandom(size, max);
+        int[] testArr4 = GenerateInput.generateRandom(size, max);
 
-        System.arraycopy(testArr1, 0, testArr2,0, testArr1.length);
         long mergeTime1, mergeTime2, insertTime, hybridTime;
 
         mergeTime1 = mergeInplace(testArr1);
