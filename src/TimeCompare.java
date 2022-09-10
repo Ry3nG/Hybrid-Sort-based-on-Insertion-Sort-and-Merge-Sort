@@ -42,9 +42,9 @@ public class TimeCompare {
         // 3 copies of the same array
         int[] testArr1 = GenerateInput.generateRandom(100000, 100);
         
-        int[] testArr2 = Arrays.copyOf(testArr1, testArr1.length);
-        int[] testArr3 = Arrays.copyOf(testArr1, testArr1.length);
-        int[] testArr4 = Arrays.copyOf(testArr1, testArr1.length);
+        int[] testArr2 = GenerateInput.generateRandom(100000, 100);
+        int[] testArr3 = GenerateInput.generateRandom(100000, 100);
+        int[] testArr4 = GenerateInput.generateRandom(100000, 100);
 
         System.arraycopy(testArr1, 0, testArr2,0, testArr1.length);
         long mergeTime1, mergeTime2, insertTime, hybridTime;
