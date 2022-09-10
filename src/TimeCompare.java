@@ -2,7 +2,7 @@ import java.io.*;
 
 public class TimeCompare {
     static final int MAX = 100; // Max value of array elements
-    static final int ITER = 50; // Number of iterations for each test
+    static final int ITER = 5; // Number of iterations for each test
     static final int MAX_SIZE = 10000000; // Max size of array
     static final int INCREMENT = 1000; // Increment size for array
 
