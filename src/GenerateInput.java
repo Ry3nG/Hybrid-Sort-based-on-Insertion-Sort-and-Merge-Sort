@@ -7,8 +7,9 @@
 import java.util.*;
 
 public class GenerateInput {
+    static final int MIN = 1;
     public static void main(String[] args) {
-        int[] testArr = generateRandom(1000000, 100);
+        int[] testArr = generateRandom(10, 100);
         System.out.println(Arrays.toString(testArr));
 
     }
@@ -18,7 +19,7 @@ public class GenerateInput {
         for (int i = 0; i < arr.length; i++)
             /*java random returns a pseudorandom,
             uniformly distributed int value between 0 (inclusive) and the specified value (exclusive)*/
-            arr[i] = new Random().nextInt(max-1+1)+1; 
+            arr[i] = (int)(Math.random() * (max - MIN + 1)) + MIN;
         return arr;
     }
 
