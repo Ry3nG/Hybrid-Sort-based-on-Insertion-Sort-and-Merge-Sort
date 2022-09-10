@@ -1,8 +1,8 @@
 
 
 public class TimeCompare {
-    static final int MAX = 100;
-    static final int ITER = 30;
+    static final int MAX = 100; // Max value of array elements
+    static final int ITER = 50; // Number of iterations for each test
 
     public static long mergeInplace(int size){
         int[] testArrInplace;
@@ -17,7 +17,6 @@ public class TimeCompare {
 
             total += (end - begin);
         }
-        
 
         return total/ITER;
     }
@@ -74,7 +73,7 @@ public class TimeCompare {
     }
 
     public static void main(String[] args) {
-        int size = 10000;
+        int size = 80000;
 
         long mergeTime1, mergeTime2, insertTime, hybridTime;
 
@@ -84,9 +83,9 @@ public class TimeCompare {
         hybridTime = hybrid(size);
 
         System.out.println("Average Time for MergeSort(Inplace) over " + ITER + " runs : "+ mergeTime1 + " ms");
-        System.out.println("Avergae Time for MergeSort(Original) over " + ITER + " runs : "+ mergeTime2 + " ms");
+        System.out.println("Average Time for MergeSort(Original) over " + ITER + " runs : "+ mergeTime2 + " ms");
         System.out.println("Average Time for InsertionSort over " + ITER + " runs : "+ insertTime + " ms");
         System.out.println("Average Time for HybridSort over " + ITER + " runs : "+ hybridTime + " ms");
-        System.out.println("\nHybridSort is "+ (hybridTime/mergeTime2)*100 + "% of the original MergeSort");
+        System.out.println("\nHybridSort is "+ ((double)hybridTime/(double)mergeTime2)*100 + "% of the original MergeSort");
     }
 }
