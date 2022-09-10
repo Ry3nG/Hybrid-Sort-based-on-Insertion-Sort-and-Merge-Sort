@@ -1,8 +1,20 @@
-
+import java.io.*;
 
 public class TimeCompare {
     static final int MAX = 100; // Max value of array elements
-    static final int ITER = 50; // Number of iterations for each test
+    static final int ITER = 5; // Number of iterations for each test
+    static final int MAX_SIZE = 10000000; // Max size of array
+    static final int INCREMENT = 1000; // Increment size for array
+
+    public static void CSVprinter(long[] wasp, String filename) throws IOException {
+        FileWriter writer = new FileWriter(filename);
+
+        for (int j = 0; j < wasp.length; j++) {
+            writer.append(String.valueOf(wasp[j]));
+            writer.append("\n");
+        }
+        writer.close();
+    }
 
     public static long mergeInplace(int size){
         int[] testArrInplace;
@@ -72,20 +84,43 @@ public class TimeCompare {
         return total/ITER;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int size = 80000;
-
+        int count = 0;
         long mergeTime1, mergeTime2, insertTime, hybridTime;
 
-        mergeTime1 = mergeInplace(size);
-        mergeTime2 = mergeOriginal(size);
-        insertTime = insertion(size);
-        hybridTime = hybrid(size);
+        long[] mergeTimes = new long[MAX_SIZE/INCREMENT];
 
-        System.out.println("Average Time for MergeSort(Inplace) over " + ITER + " runs : "+ mergeTime1 + " ms");
-        System.out.println("Average Time for MergeSort(Original) over " + ITER + " runs : "+ mergeTime2 + " ms");
-        System.out.println("Average Time for InsertionSort over " + ITER + " runs : "+ insertTime + " ms");
-        System.out.println("Average Time for HybridSort over " + ITER + " runs : "+ hybridTime + " ms");
-        System.out.println("\nHybridSort is "+ ((double)hybridTime/(double)mergeTime2)*100 + "% of the original MergeSort");
+        for(int i = 1000; i <= MAX_SIZE; i += INCREMENT){
+            System.out.println("Iteration: " + count + ", Size: " + i);
+            mergeTime1 = mergeOriginal(i);
+            mergeTimes[count] = mergeTime1;
+            count++;
+        }
+
+        CSVprinter(mergeTimes, "merge.csv");
+
+        count = 0;
+        long[] insertTimes = new long[MAX_SIZE/INCREMENT];
+
+        for(int i = 1000; i <= MAX_SIZE; i += INCREMENT){
+            System.out.println("Iteration: " + count + ", Size: " + i);
+            insertTime = insertion(i);
+            insertTimes[count] = insertTime;
+            count++;
+        }
+        
+        CSVprinter(insertTimes, "insert.csv");
+
+        // mergeTime1 = mergeInplace(size);
+        // mergeTime2 = mergeOriginal(size);
+        // insertTime = insertion(size);
+        // hybridTime = hybrid(size);
+
+        // System.out.println("Average Time for MergeSort(Inplace) over " + ITER + " runs : "+ mergeTime1 + " ms");
+        // System.out.println("Average Time for MergeSort(Original) over " + ITER + " runs : "+ mergeTime2 + " ms");
+        // System.out.println("Average Time for InsertionSort over " + ITER + " runs : "+ insertTime + " ms");
+        // System.out.println("Average Time for HybridSort over " + ITER + " runs : "+ hybridTime + " ms");
+        // System.out.println("\nHybridSort is "+ ((double)hybridTime/(double)mergeTime2)*100 + "% of the original MergeSort");
     }
 }
