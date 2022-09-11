@@ -19,12 +19,12 @@ public class HybridSortwithKeyCmpRecord {
     public static long[] keyCmpwithInputTest() {
         // S fixed, number of key comparisons over different sizes of input size:
         int count = 0;
-        long[] keyCmpArr = new long[1000];
-        for (int i = 1000; i < 10000000; i += 10000) {
+        long[] keyCmpArr = new long[10000];
+        for (int i = 1000; i < 10000000; i += 1000) {
             long average = 0;
             for (int j = 0; j < 5; j++) {
                 keyCmp = 0;
-                int[] testArr = GenerateInput.generateRandom(i, 1000);
+                int[] testArr = GenerateInput.generateRandom(i, 10000);
                 hybridSortIt(testArr, 0, testArr.length - 1);
                 average += keyCmp;
             }
