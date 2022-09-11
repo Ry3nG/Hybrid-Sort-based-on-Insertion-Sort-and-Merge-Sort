@@ -93,9 +93,9 @@ public class TimeCompare {
         int count = 0;
         long mergeTime1, mergeTime2, insertTime, hybridTime;
 
-        long[] mergeTimes = new long[MAX_SIZE/INCREMENT];
+        long[] mergeTimes = new long[MAX_SIZE/INCREMENT + 1];
 
-        for(int i = 0; i < MAX_SIZE; i += INCREMENT){
+        for(int i = 1; i <= MAX_SIZE; i += INCREMENT){
             System.out.println("Iteration: " + count + ", Size: " + i);
             mergeTime1 = mergeOriginal(i);
             mergeTimes[count] = mergeTime1;
@@ -105,9 +105,9 @@ public class TimeCompare {
         CSVprinter(mergeTimes, "merge.csv");
 
         count = 0;
-        long[] insertTimes = new long[MAX_SIZE/INCREMENT];
+        long[] insertTimes = new long[MAX_SIZE/INCREMENT + 1];
 
-        for(int i = 0; i < MAX_SIZE; i += INCREMENT){
+        for(int i = 1; i <= MAX_SIZE; i += INCREMENT){
             System.out.println("Iteration: " + count + ", Size: " + i);
             insertTime = insertion(i);
             insertTimes[count] = insertTime;
