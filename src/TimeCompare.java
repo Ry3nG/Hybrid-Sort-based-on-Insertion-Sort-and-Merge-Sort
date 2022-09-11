@@ -2,9 +2,9 @@ import java.io.*;
 
 public class TimeCompare {
     static final int MAX = 100; // Max value of array elements
-    static final int ITER = 5; // Number of iterations for each test
-    static final int MAX_SIZE = 10000000; // Max size of array
-    static final int INCREMENT = 1000; // Increment size for array
+    static final int ITER = 50; // Number of iterations for each test
+    static final int MAX_SIZE = 1000; // Max size of array
+    static final int INCREMENT = 1; // Increment size for array
 
     public static void CSVprinter(long[] wasp, String filename) throws IOException {
         FileWriter writer = new FileWriter(filename);
@@ -40,9 +40,11 @@ public class TimeCompare {
         for(int i = 0; i < ITER; i++){
             testArrOriginal = GenerateInput.generateRandom(size, MAX);
             long begin, end;
-            begin = System.currentTimeMillis();
+            begin = System.nanoTime();
+            // begin = System.currentTimeMillis();
             MergeSortOriginal.sortIt(testArrOriginal,0,testArrOriginal.length-1);
-            end = System.currentTimeMillis();
+            // end = System.currentTimeMillis();
+            end = System.nanoTime();
 
             total += (end - begin);
         }
@@ -57,9 +59,11 @@ public class TimeCompare {
         for(int i = 0; i < ITER; i++){
             testArrInsert = GenerateInput.generateRandom(size, MAX);
             long begin, end;
-            begin = System.currentTimeMillis();
+            // begin = System.currentTimeMillis();
+            begin = System.nanoTime();
             InsertionSort.sortIt(testArrInsert,0,testArrInsert.length-1);
-            end = System.currentTimeMillis();
+            // end = System.currentTimeMillis();
+            end = System.nanoTime();
 
             total += (end - begin);
         }
@@ -101,9 +105,9 @@ public class TimeCompare {
         CSVprinter(mergeTimes, "merge.csv");
 
         count = 0;
-        long[] insertTimes = new long[MAX_SIZE/100/INCREMENT];
+        long[] insertTimes = new long[MAX_SIZE/INCREMENT];
 
-        for(int i = 1000; i <= MAX_SIZE/100; i += INCREMENT){
+        for(int i = 0; i <= MAX_SIZE; i += INCREMENT){
             System.out.println("Iteration: " + count + ", Size: " + i);
             insertTime = insertion(i);
             insertTimes[count] = insertTime;
