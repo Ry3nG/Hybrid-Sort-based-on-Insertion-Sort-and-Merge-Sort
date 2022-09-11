@@ -89,7 +89,6 @@ public class TimeCompare {
     }
 
     public static void main(String[] args) throws IOException {
-        int size = 80000;
         int count = 0;
         long mergeTime1, mergeTime2, insertTime, hybridTime;
 
