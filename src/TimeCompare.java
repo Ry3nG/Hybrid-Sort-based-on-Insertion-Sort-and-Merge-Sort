@@ -2,9 +2,10 @@ import java.io.*;
 
 public class TimeCompare {
     static final int MAX = 100; // Max value of array elements
-    static final int ITER = 50; // Number of iterations for each test
+    static final int ITER = 1000; // Number of iterations for each test
     static final int MAX_SIZE = 1000; // Max size of array
     static final int INCREMENT = 1; // Increment size for array
+    static final int MODULO = 1; // Modulo for nanoTime
 
     public static void CSVprinter(long[] wasp, String filename) throws IOException {
         FileWriter writer = new FileWriter(filename);
@@ -40,11 +41,11 @@ public class TimeCompare {
         for(int i = 0; i < ITER; i++){
             testArrOriginal = GenerateInput.generateRandom(size, MAX);
             long begin, end;
-            begin = System.nanoTime();
+            begin = System.nanoTime()/MODULO;
             // begin = System.currentTimeMillis();
             MergeSortOriginal.sortIt(testArrOriginal,0,testArrOriginal.length-1);
             // end = System.currentTimeMillis();
-            end = System.nanoTime();
+            end = System.nanoTime()/MODULO;
 
             total += (end - begin);
         }
@@ -60,10 +61,10 @@ public class TimeCompare {
             testArrInsert = GenerateInput.generateRandom(size, MAX);
             long begin, end;
             // begin = System.currentTimeMillis();
-            begin = System.nanoTime();
+            begin = System.nanoTime()/MODULO;
             InsertionSort.sortIt(testArrInsert,0,testArrInsert.length-1);
             // end = System.currentTimeMillis();
-            end = System.nanoTime();
+            end = System.nanoTime()/MODULO;
 
             total += (end - begin);
         }
