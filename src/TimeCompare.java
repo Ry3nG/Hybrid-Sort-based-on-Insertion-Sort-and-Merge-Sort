@@ -95,7 +95,7 @@ public class TimeCompare {
 
         long[] mergeTimes = new long[MAX_SIZE/INCREMENT];
 
-        for(int i = 1000; i <= MAX_SIZE; i += INCREMENT){
+        for(int i = 0; i < MAX_SIZE; i += INCREMENT){
             System.out.println("Iteration: " + count + ", Size: " + i);
             mergeTime1 = mergeOriginal(i);
             mergeTimes[count] = mergeTime1;
@@ -107,7 +107,7 @@ public class TimeCompare {
         count = 0;
         long[] insertTimes = new long[MAX_SIZE/INCREMENT];
 
-        for(int i = 0; i <= MAX_SIZE; i += INCREMENT){
+        for(int i = 0; i < MAX_SIZE; i += INCREMENT){
             System.out.println("Iteration: " + count + ", Size: " + i);
             insertTime = insertion(i);
             insertTimes[count] = insertTime;
