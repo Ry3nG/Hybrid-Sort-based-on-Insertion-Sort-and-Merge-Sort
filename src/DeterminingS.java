@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class DeterminingS {
     static final int MAX_SIZE = 300;
     static final int MAX_VALUE = 1000;
-    static final int ITER = 10000; // number of each test to be averaged
+    static final int ITER = 50000; // number of each test to be averaged
 
     public static void main(String[] args) throws IOException {
         long[] insertTimeSeries = timeInsertionSort();
