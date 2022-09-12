@@ -1,8 +1,7 @@
 
-
 public class MergeSortOriginal {
 
-    public static void  sortIt(int[] anyArray, int start, int end) {
+    public static void sortIt(int[] anyArray, int start, int end) {
         if (start < end) {
             int mid = start + (end - start) / 2;
 
@@ -13,7 +12,7 @@ public class MergeSortOriginal {
         }
     }
 
-    public static void  merge(int[] anyArray, int start, int mid, int end) {
+    public static void merge(int[] anyArray, int start, int mid, int end) {
 
         int n1 = mid - start + 1;
         int n2 = end - mid;
@@ -47,10 +46,6 @@ public class MergeSortOriginal {
             j++;
             k++;
         }
-
-    }
-
-    public static void main(String[] args) {
 
     }
 }
