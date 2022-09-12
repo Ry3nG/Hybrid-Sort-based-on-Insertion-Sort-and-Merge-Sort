@@ -10,8 +10,8 @@ public class HybridSortwithKeyCmp {
     static final int ITER = 10; // number of each test to be averaged
 
     public static void main(String[] args) throws IOException {
-        // generateTestResults();
-        getHybridSortKeyCmpandTime();
+        generateTestResults();
+        //getHybridSortKeyCmpandTime();
 
     }
 
@@ -42,9 +42,9 @@ public class HybridSortwithKeyCmp {
         System.out.println("Test 2: " + Arrays.toString(test2Result));
         makeCSV.CSVprinter(test2Result, "test2.csv");
 
-        long[] test1Result = keyCmpwithInputTest();
-        System.out.println("Test 1: " + Arrays.toString(test1Result));
-        makeCSV.CSVprinter(test1Result, "test1.csv");
+        //long[] test1Result = keyCmpwithInputTest();
+        //System.out.println("Test 1: " + Arrays.toString(test1Result));
+        //makeCSV.CSVprinter(test1Result, "test1.csv");
     }
 
     public static long[] keyCmpwithInputTest() {
@@ -68,13 +68,13 @@ public class HybridSortwithKeyCmp {
     public static long[] keyCmpwithSTest() {
         // input size fixed,test for different value of S
         int count = 0;
-        long[] keyCmpArr = new long[100];
-        for (int i = 0; i < 100; i += 1) {
+        long[] keyCmpArr = new long[1000];
+        for (int i = 0; i < 1000; i += 1) {
             S = i;
             long average = 0;
             for (int j = 0; j < 100; j++) {
                 keyCmp = 0;
-                int[] testArr = GenerateInput.generateRandom(100000, 1000);
+                int[] testArr = GenerateInput.generateRandom(1000, 1000);
                 hybridSortIt(testArr, 0, testArr.length - 1);
                 average += keyCmp;
             }
