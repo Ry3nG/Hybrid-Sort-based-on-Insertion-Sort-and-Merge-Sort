@@ -36,7 +36,7 @@ public class TimeCompare {
 
         for(int i = 0; i < ITER; i++){
             testArrOriginal = GenerateInput.generateRandom(size, MAX);
-            long begin, end;
+            //long begin, end;
 
             Stopwatch stopWatch = Stopwatch.createStarted();
             // begin = System.nanoTime()/MODULO;
@@ -61,7 +61,7 @@ public class TimeCompare {
 
         for(int i = 0; i < ITER; i++){
             testArrInsert = GenerateInput.generateRandom(size, MAX);
-            long begin, end;
+            //long begin, end;
 
             Stopwatch stopWatch = Stopwatch.createStarted();
             // begin = System.currentTimeMillis();
@@ -99,7 +99,7 @@ public class TimeCompare {
 
     public static void main(String[] args) throws IOException {
         int count = 0;
-        long mergeTime1, mergeTime2, insertTime, hybridTime;
+        long mergeTime1,  insertTime;
 
         // mergeTime1 = mergeOriginal(1000);
 
