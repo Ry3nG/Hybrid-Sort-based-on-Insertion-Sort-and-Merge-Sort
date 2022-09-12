@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class HybridSort {
-    static final int S = 40; // switch to insertion sort if array size smaller than S
+    static final int S = 105; // switch to insertion sort if array size smaller than S
 
     public static void main(String[] args) throws Exception {
         int[] testArr = GenerateInput.generateRandom(10, 1000);
@@ -10,17 +10,14 @@ public class HybridSort {
     }
 
     public static void sortIt(int[] arr, int start, int end) {
-        if (arr.length <= S) {
-            InsertionSort.sortIt(arr, start, end);
-        } else {
-            if (start < end) {
-                int mid = start + (end - start) / 2;
 
-                sortIt(arr, start, mid);
-                sortIt(arr, mid + 1, end);
+        if (start < end) {
+            int mid = start + (end - start) / 2;
 
-                merge(arr, start, mid, end);
-            }
+            sortIt(arr, start, mid);
+            sortIt(arr, mid + 1, end);
+
+            merge(arr, start, mid, end);
         }
     }
 
