@@ -3,7 +3,7 @@ public class MergeSortwithKeyCmp {
 
         static final int TEST_SIZE = 10000000;
         static final int TEST_VALUE = 1000;
-        static final int ITER = 30; // number of each test to be averaged
+        static final int ITER = 10; // number of each test to be averaged
     
         public static void sortIt(int[] anyArray, int start, int end) {
             if (start < end) {
