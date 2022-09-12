@@ -15,12 +15,7 @@ public class GenerateInput {
     }
 
     public static int[] generateRandom(int size, int max) {
-        int[] arr = new int[size];
-        for (int i = 0; i < arr.length; i++)
-            /*java random returns a pseudorandom,
-            uniformly distributed int value between 0 (inclusive) and the specified value (exclusive)*/
-            arr[i] = (int)(Math.random() * (max - MIN + 1)) + MIN;
-        return arr;
+        return new Random().ints(size, 0, max).toArray();
     }
 
 }
