@@ -10,8 +10,8 @@ public class HybridSortwithKeyCmp {
     static final int ITER = 10; // number of each test to be averaged
 
     public static void main(String[] args) throws IOException {
-        generateTestResults();
-        //getHybridSortKeyCmpandTime();
+        //generateTestResults();
+        getHybridSortKeyCmpandTime();
 
     }
 
