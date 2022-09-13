@@ -41,8 +41,8 @@ The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- `bin`: the folder to maintain compiler outputs
+- `output`: the folder to maintain test output csv files.
 
 
 ## Time Complexity Analysis
