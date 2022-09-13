@@ -1,4 +1,6 @@
-# Project 1 : Integration of Mergesort & Insertion Sort
+# Hybrid Sort : Integration of Mergesort & Insertion Sort
+> this is a example-class project for NTU SC2001
+
 In Mergesort, when the sizes of subarrays are small, the overhead of many recursive
 calls makes the algorithm inefficient. Therefore, in real use, we often combine
 Mergesort with Insertion Sort to come up with a hybrid sorting algorithm for better
@@ -39,8 +41,8 @@ The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- `bin`: the folder to maintain compiler outputs
+- `output`: the folder to maintain test output csv files.
 
 
 ## Time Complexity Analysis
