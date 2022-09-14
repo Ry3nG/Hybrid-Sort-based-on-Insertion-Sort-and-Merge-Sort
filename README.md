@@ -52,7 +52,7 @@ hybridMerge(left, right){
 An example is shown below:
 ![HybridSort example](.\assets\Slide4.png)
 
-Our implementation of Hybrid Sort can be found [here](.\src\HybridSort.java)
+Our implementation of Hybrid Sort can be found [here](./src/HybridSort.java)
 
 ### Algorithm Analysis (Theoretical)
 * Best Case: $O(n+nlog(\frac{n}{s}))$
