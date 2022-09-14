@@ -1,5 +1,6 @@
 # Hybrid Sort : Integration of Mergesort & Insertion Sort
 > this is a example-class project for NTU SC2001
+> Author: NTU SCSE Gong Zerui, Joel Lim, Glendon Goh
 
 ## Introduction
 
