@@ -1,9 +1,9 @@
 # Hybrid Sort : Integration of Mergesort & Insertion Sort
-> this is a example-class project for NTU SC2001
-
 > Author: NTU SCSE Gong Zerui, Joel Lim, Glendon Goh
 
 ## Introduction
+
+> this is a example-class project for NTU SC2001
 
 In Mergesort, when the sizes of subarrays are small, the overhead of many recursive calls makes the algorithm inefficient.
 
